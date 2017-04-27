@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Work Planning</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
+    <link rel="apple-touch-icon" href="images/icons/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/icons/favicon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/icons/favicon-114x114.png">
+    <!--Loading bootstrap css-->
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,700,300">
+    <link type="text/css" rel="stylesheet" href="styles/jquery-ui-1.10.4.custom.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/animate.css">
+    <link type="text/css" rel="stylesheet" href="styles/all.css">
+    <link type="text/css" rel="stylesheet" href="styles/main.css">
+    <link type="text/css" rel="stylesheet" href="styles/style-responsive.css">
+    <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
+    <link type="text/css" rel="stylesheet" href="styles/pace.css">
+    <link type="text/css" rel="stylesheet" href="styles/jquery.news-ticker.css">
+    
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> 
+</head>
+<body>
+	<!--BEGIN MODAL CONFIG PORTLET-->
+	<div id="modal-config" class="modal fade">
+	    <div class="modal-dialog">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
+	                    &times;</button>
+	                <h4 class="modal-title" style="color:red;">
+	                    Alert:</h4>
+	            </div>
+	            <div class="modal-body">
+	                <p>
+	                   You have selected 100 jobs, please Select the contractor you
+	                   would like to carry out this work with.
+	                </p>
+	                
+	                <div style="float: left;">
+						<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Contractor:</label>
+						<select id="soflow" style="padding: 2px;">
+							<option value="" disabled selected>Select your option</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+	                
+	            </div>
+	            <div class="modal-footer" style="margin-top:70px;">
+	                <button type="button" data-dismiss="modal" class="btn btn-default">
+	                    Close
+	                </button>
+	                <button type="button" class="btn btn-info">
+	                    Allocate
+	                </button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+
+    <div>
+        <!--END THEME SETTING-->
+        <!--BEGIN BACK TO TOP-->
+        <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
+        <!--END BACK TO TOP-->
+        <!--BEGIN TOPBAR-->
+        <div id="header-topbar-option-demo" class="page-header-topbar">
+            <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
+            <div class="navbar-header" style="margin: 5px;">
+                <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a href="index.html"><img src="images/logos/calm_logo_header.png"></a>    
+            </div>
+            <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
+                
+                <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
+                    <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Search here..." class="form-control text-white"/></div>
+                </form>
+                <ul class="nav navbar navbar-top-links navbar-right mbn">
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-green">3</span></a>
+                        
+                    </li>
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-orange">7</span></a>
+                        
+                    </li>
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-tasks fa-fw"></i><span class="badge badge-yellow">8</span></a>
+                        
+                    </li>
+                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-user" aria-hidden="true"></i>&nbsp;<span class="hidden-xs">User</span>&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-user pull-right">
+                            <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i>My Calendar</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i>My Inbox<span class="badge badge-danger">3</span></a></li>
+                            <li><a href="#"><i class="fa fa-tasks"></i>My Tasks<span class="badge badge-success">7</span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-lock"></i>Lock Screen</a></li>
+                            <li><a href="Login.html"><i class="fa fa-key"></i>Log Out</a></li>
+                        </ul>
+                    </li>
+                    <li id="topbar-chat" class="hidden-xs"><a href="javascript:void(0)" data-step="4" data-intro="&lt;b&gt;Form chat&lt;/b&gt; keep you connecting with other coworker" data-position="left" class="btn-chat"><i class="fa fa-comments"></i><span class="badge badge-info">3</span></a></li>
+                </ul>
+            </div>
+        </nav>
+       	<!--BEGIN MODAL CONFIG PORTLET-->
+		<div id="modal-config" class="modal fade">
+		    <div class="modal-dialog">
+		        <div class="modal-content">
+		            <div class="modal-header">
+		                <button type="button" data-dismiss="modal" aria-hidden="true" class="close">
+		                    &times;</button>
+		                <h4 class="modal-title" style="color:red;">
+		                    Alert:</h4>
+		            </div>
+		            <div class="modal-body">
+		                <p>
+		                   You have selected 100 jobs, please Select the contractor you
+		                   would like to approve this work with.
+		                </p>
+		                
+		                <div style="float: left;">
+							<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Contractor:</label>
+							<select id="soflow" style="padding: 2px;">
+								<option value="" disabled selected>Select your option</option>
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="opel">Opel</option>
+								<option value="audi">Audi</option>
+							</select>
+						</div>
+		                
+		            </div>
+		            <div class="modal-footer" style="margin-top:70px;">
+		                <button type="button" data-dismiss="modal" class="btn btn-default">
+		                    Close
+		                </button>
+		                <button type="button" class="btn btn-info">
+		                    Approve
+		                </button>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+        <!--END MODAL CONFIG PORTLET-->
+           
+        </div>
+        
+        <!--END TOPBAR-->
+        <div id="wrapper">
+            <!--BEGIN SIDEBAR MENU-->
+            <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
+                data-position="right" class="navbar-default navbar-static-side">
+            <div class="sidebar-collapse menu-scroll">
+                <ul id="side-menu" class="nav">
+                    
+                     <div class="clearfix"></div>
+                    <li><a href="dashboard.html"><i class="fa fa-tachometer fa-fw">
+                        <div class="icon-bg bg-orange"></div>
+                    </i><span class="menu-title">Dashboard</span></a></li>
+                    
+                    <li><a href="Asset_search.html"><i class="fa fa-search fa-fw">
+                        <div class="icon-bg bg-pink"></div>
+                    </i><span class="menu-title">Asset Search</span></a>
+                       
+                    </li>
+                    <li class="active"><a href="Work_planning.html"><i class="fa fa-calendar fa-fw">
+                        <div class="icon-bg bg-green"></div>
+                    </i><span class="menu-title">Work Planning</span></a>
+                       
+                    </li>
+                    <li><a href="Integration.html"><i class="fa fa-exchange fa-fw">
+                        <div class="icon-bg bg-violet"></div>
+                    </i><span class="menu-title">Integration</span></a>
+                      
+                    </li>
+                    <li><a href="MI_reports.html"><i class="fa fa-bar-chart-o fa-fw">
+                        <div class="icon-bg bg-blue"></div>
+                    </i><span class="menu-title">M.I Reports</span></a>
+                          
+                    </li>
+                    <li><a href="Admin.html"><i class="fa fa-cog fa-fw">
+                        <div class="icon-bg bg-red"></div>
+                    </i><span class="menu-title">Admin</span></a>
+                      
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+            <div id="page-wrapper">
+                <!--BEGIN TITLE & BREADCRUMB PAGE-->
+                <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+                    <div class="page-header pull-left">
+                        <div class="page-title">
+                            Work Planning
+                         </div>
+                    </div>
+                    <ol class="breadcrumb page-breadcrumb pull-right">
+                        <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li class="hidden"><a href="#">Work Planning</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+                        <li class="active">Work Planning</li>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;<li class="active">Unplanned Jobs</li>
+                    </ol>
+
+                    <div class="clearfix">
+                    </div>
+                </div>
+                
+                <div class="clearfix">
+                </div>
+                                
+                <!-- Progress Tracker v2 -->
+				<ol class="progress" data-steps="5" style="font-size: 22px;height: 30px;">
+				    <li class="active">
+				        <span class="name">Unplanned Jobs</span>
+				        <span class="step"><span>1</span></span>
+				    </li>
+				    <li>
+				        <a href="Work_planning_approval.html"><span class="name">Approval</span></a>
+				        <span class="step"><span>2</span></span>
+				    </li>
+				    <li>
+				        <span class="name">Planned</span>
+				        <span class="step"><span>3</span></span>
+				    </li>
+				    <li>
+				        <a href="Work_planning_complete.html"><span class="name">Complete Jobs</span></a>
+				        <span class="step"><span>4</span>
+				    </li>
+				    <li>
+				        <span class="name">Cancelled Jobs</span>
+				        <span class="step"><span>5</span></span>
+				    </li>
+				</ol>
+				<!-- filters -->
+
+                <div style="width: 100%;">
+	            	<div style="float: left;">
+						<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Contract Type:</label>
+						<select id="soflow" style="padding: 2px;">
+							<option value="" disabled selected>Select your option</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+
+					<div style="float: left;">
+						<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Maintenance Type:</label>
+						<select id="soflow" style="padding: 2px;">
+							<option value="" disabled selected>Select your option</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+						</select>
+					</div>
+					
+					<div style="float: left;">
+						<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Asset Health:</label>
+						<select id="soflow" style="padding: 2px;">
+							<option value="" disabled selected>Select your option</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+							
+	            	<div style="float: left;">
+						<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Policy Type:</label>
+						<select id="soflow" style="padding: 2px;">
+							<option value="" disabled selected>Select your option</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+					
+					<div style="float: left;">
+						<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Asset Type:</label>
+						<select id="soflow" style="padding: 2px;">
+							<option value="" disabled selected>Select your option</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+					
+					<div style="float: left;">
+						<label style="width:140px;clear:left;text-align:right;padding-right:0px;">Asset Location:</label>
+						<select id="soflow" style="padding: 2px;">
+							<option value="" disabled selected>Select your option</option>
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="opel">Opel</option>
+							<option value="audi">Audi</option>
+						</select>
+					</div>
+					
+					<div style="float: left;padding-top: 10px;">
+						<label style="width:150px;clear:left;text-align:right;padding-right:0px;">Earliest Date:</label>
+						<input type="date" value="#ff0000" style="height: 25px;">
+					</div>
+					
+					<div style="float: left;padding-top: 10px;"">
+						<label style="width:155px;clear:left;text-align:right;padding-right:0px;">Latest Date:</label>
+						<input type="date" value="#ff0000" style="height: 25px;">
+					</div>
+					
+					<div class="clearfix">
+                	</div>
+					
+					<div style="float:left;padding: 30px 0px 5px 25px;">
+                		<button data-toggle="modal" data-target="#modal-config" type="button" class="btn btn-info" title="Allocate Work" data-target="#modal-config">
+                			<span class="glyphicon glyphicon-user"></span> Allocate Work
+                		</button>
+                	</div>
+                	
+                	<div style="float:left;padding: 30px 0px 5px 15px;">
+                		<button type="button" class="btn btn-info" title="Add New Job">
+                			<span class="glyphicon glyphicon-plus-sign"></span> Add New Job
+                		</button>
+                	</div>
+				</div>
+
+
+                <div class="clearfix">
+                </div>
+           
+                <!--END TITLE & BREADCRUMB PAGE-->
+                <!--BEGIN CONTENT-->
+                <div class="page-content">
+                    <div id="tab-general">
+                        <div class="row mbl">                     
+	                        <div class="panel panel-green" style="margin: -15px 20px 20px 20px;">
+	                            <div class="panel-heading">Asset Details</div>
+	                            <div class="panel-body">
+	                            	Select <a href="#">All</a>/<a href="#">None</a>
+	                                <table class="table table-hover table-bordered">
+	                                    <thead>
+	                                    <tr>
+	                                    	<th></th>
+	                                        <th>Asset Type</th>
+	                                        <th>Earliest Start Date</th>
+	                                        <th>Latest Complete Date</th>
+	                                        <th>Activity Type</th>
+	                                        <th>Activity Reason</th>
+	                                        <th>Raised by</th>
+	                                        <th>Special Instructions</th>
+	                                        <th>Contractor</th>
+	                                    </tr>
+	                                    </thead>
+	                                    <tbody>
+	                                    <tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Bathing Water Pipe</td>
+	                                        <td>01/01/2017</td>
+	                                        <td>01/06/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+	                                   	<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Water Pipe</td>
+	                                        <td>15/02/2017</td>
+	                                        <td>05/03/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+	                                   	<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Base</td>
+	                                        <td>18/02/2017</td>
+	                                        <td>19/02/2017</td>
+	              		                    <td>Upgrade</td>
+	              			                <td>Deteriorate</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+	                                   	<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Valve</td>
+	                                        <td>18/02/2017</td>
+	                                        <td>20/02/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+	                   					<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Water Pipe</td>
+	                                        <td>15/02/2017</td>
+	                                        <td>05/03/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+	                                   	<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Base</td>
+	                                        <td>18/02/2017</td>
+	                                        <td>19/02/2017</td>
+	              		                    <td>Upgrade</td>
+	              			                <td>Deteriorate</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+										<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Bathing Water Pipe</td>
+	                                        <td>01/01/2017</td>
+	                                        <td>01/06/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+	                       				<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>CSO</td>
+	                                        <td>10/03/2017</td>
+	                                        <td>06/06/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+										<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>Bathing Water Pipe</td>
+	                                        <td>10/03/2017</td>
+	                                        <td>06/06/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+										<tr>
+	                                    	<td><input type="checkbox"></td>
+	                                        <td>CSO Bathing Water</td>
+	                                        <td>16/05/2017</td>
+	                                        <td>04/06/2017</td>
+	              		                    <td>Buff</td>
+	              			                <td>Corrosion</td>
+	              			                <td>Maintenance Schedule</td>
+	              			                <td>X</td>
+	              			                <td>--</td>
+	                                    </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>
+	                        </div>
+                       
+                        </div>
+                    </div>
+ 
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <!--END CONTENT-->
+                <!--BEGIN FOOTER-->
+                <div id="footer">
+                    <div class="copyright">
+                        <a href="http://www.calm-solutions.com/">2016 © Calm Solutions</a></div>
+                </div>
+                <!--END FOOTER-->
+            </div>
+            <!--END PAGE WRAPPER-->
+        </div>
+    </div>
+    <script src="script/jquery-1.10.2.min.js"></script>
+    <script src="script/jquery-migrate-1.2.1.min.js"></script>
+    <script src="script/jquery-ui.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/bootstrap-hover-dropdown.js"></script>
+    <script src="script/html5shiv.js"></script>
+    <script src="script/respond.min.js"></script>
+    <script src="script/jquery.metisMenu.js"></script>
+    <script src="script/jquery.slimscroll.js"></script>
+    <script src="script/jquery.cookie.js"></script>
+    <script src="script/icheck.min.js"></script>
+    <script src="script/custom.min.js"></script>
+    <script src="script/jquery.news-ticker.js"></script>
+    <script src="script/jquery.menu.js"></script>
+    <script src="script/pace.min.js"></script>
+    <script src="script/holder.js"></script>
+    <script src="script/responsive-tabs.js"></script>
+    <script src="script/jquery.flot.js"></script>
+    <script src="script/jquery.flot.categories.js"></script>
+    <script src="script/jquery.flot.pie.js"></script>
+    <script src="script/jquery.flot.tooltip.js"></script>
+    <script src="script/jquery.flot.resize.js"></script>
+    <script src="script/jquery.flot.fillbetween.js"></script>
+    <script src="script/jquery.flot.stack.js"></script>
+    <script src="script/jquery.flot.spline.js"></script>
+    <script src="script/zabuto_calendar.min.js"></script>
+    <script src="script/index.js"></script>
+    <!--LOADING SCRIPTS FOR CHARTS-->
+    <script src="script/highcharts.js"></script>
+    <script src="script/data.js"></script>
+    <script src="script/drilldown.js"></script>
+    <script src="script/exporting.js"></script>
+    <script src="script/highcharts-more.js"></script>
+    <script src="script/charts-highchart-pie.js"></script>
+    <script src="script/charts-highchart-more.js"></script>
+
+    <!--CORE JAVASCRIPT-->
+    <script src="script/main.js"></script>
+    <script>        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-145464-12', 'auto');
+        ga('send', 'pageview');
+
+        
+</script>
+
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	// build a variable to target the #menu div
+	var menu = $('#menu');
+	var contentP = $('#contentPanel');
+	// bind a click function to the menu-trigger
+	$('#menu-trigger').click(function(event){
+		event.preventDefault();
+		// if the menu is visible slide it up
+		if (menu.is(":visible"))
+		{
+			menu.slideUp(400);
+			contentP.slideUp(10); // BM Modification
+			$(this).removeClass("open");
+		}
+		// otherwise, slide the menu down
+		else
+		{
+			menu.slideDown(400);
+			contentP.slideDown(10); // BM Modification
+			$(this).addClass("open");
+		}
+	});
+});
+</script>
+
+
+</body>
+</html>
