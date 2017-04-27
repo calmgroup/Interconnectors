@@ -225,8 +225,8 @@ $(function () {
     //END AREA CHART
 
     //BEGIN AREA CHART SPLINE
-    var d6_1 = [["Jan", 67],["Feb", 91],["Mar", 36],["Apr", 150],["May", 28],["Jun", 123],["Jul", 38]];
-    var d6_2 = [["Jan", 59],["Feb", 49],["Mar", 45],["Apr", 94],["May", 76],["Jun", 22],["Jul", 31]];
+    var d6_1 = [["Wk1", 67],["Wk2", 91],["Wk3", 36],["Wk4", 150],["Wk5", 28],["Wk6", 123],["Wk7", 38]];
+    var d6_2 = [["Wk1", 59],["Wk2", 49],["Wk3", 45],["Wk4", 94],["Wk5", 76],["Wk6", 22],["Wk7", 31]];
     $.plot("#area-chart-spline", [{
         data: d6_1,
         label: "New Visitor",

@@ -1289,7 +1289,7 @@ background: #303030; /* Old browsers */
 #sum_box .icon {
   color: #999999;
   font-size: 55px;
-  margin-top: 7px;
+  margin-top: 0px; /* Bm changed from 7px */
   margin-bottom: 0px;
   float: right;
 }
